@@ -32,7 +32,7 @@ public class Controller extends HttpServlet {
 		try {
 			dao = new DAO(dataSource);
 		} catch (Exception e) {
-			throw new ServletException();
+			throw new ServletException(e);
 		}
 	}
 
@@ -40,13 +40,8 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			String form = request.getParameter("add");
-			String form2 = request.getParameter("del");
 			if (form == null) {
 				form = "LIST";
-			}
-
-			if (form2 == null) {
-				form2 = "LIST";
 			}
 			switch (form) {
 			case "LIST":
@@ -56,20 +51,14 @@ public class Controller extends HttpServlet {
 				addMedicine(request, response);
 				break;
 
+			case "DEL":
+				delMedicine(request, response);
+				break;
+
 			default:
 				listMedicine(request, response);
 			}
 
-			switch (form2) {
-			case "LIST":
-				listMedicine(request, response);
-				break;
-			case "DEL":
-				delMedicine(request, response);
-				break;
-			default:
-				listMedicine(request, response);
-			}
 			listMedicine(request, response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -79,15 +68,20 @@ public class Controller extends HttpServlet {
 	}
 
 	private void delMedicine(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		int id = Integer.parseInt(request.getParameter("id"));
 
-		dao.delMedicine(id);
+		// read student id from form data
+		String theMedId = request.getParameter("medId");
 
+		// delete student from database
+		dao.delMedicine(theMedId);
+
+		// send them back to "list students" page
+		listMedicine(request, response);
 	}
 
 	private void addMedicine(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String name = request.getParameter("medicine");
-		String mfg = request.getParameter("mgf");
+		String mfg = request.getParameter("mfg");
 		String exp = request.getParameter("exp");
 		String cost = request.getParameter("cost");
 

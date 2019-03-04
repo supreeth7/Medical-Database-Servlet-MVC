@@ -9,9 +9,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/supre/Desktop/Jars/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/supre/Desktop/Jars/jstl-api-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/supre/Desktop/Jars/mysql-connector-java-8.0.15.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/annotations-api.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-ant.jar"/>

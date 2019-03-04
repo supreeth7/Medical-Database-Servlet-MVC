@@ -17,10 +17,7 @@
 	<div id="container">
 		<div id="content">
 			<input type="button" value="Add Medicine"
-				onclick="window.location.href='add-form.jsp'" ;class="add-button">
-			&nbsp;
-			<input type="button" value="Delete Medicine"
-				onclick="window.location.href='del-form.jsp'" ;class="add-button">
+				onclick="window.location.href='add-form.jsp'" class="add-button"/>
 			<table>
 				<tr>
 					<th>ID</th>
@@ -31,12 +28,21 @@
 				</tr>
 
 				<c:forEach var="temp" items="${MEDICINES}">
+				<c:url var="deleteLink" value="Controller">
+						<c:param name="form" value="DEL" />
+						<c:param name="medId" value="${temp.id}" />
+					</c:url>
 					<tr>
 						<td>${temp.id}</td>
 						<td>${temp.name}</td>
 						<td>${temp.manu}</td>
 						<td>${temp.expr}</td>
 						<td>${temp.price}</td>
+						<td>
+							<a href="${deleteLink}" 
+							onclick="if (!(confirm('Are you sure you want to delete this item?'))) return false">Delete
+							</a>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>
