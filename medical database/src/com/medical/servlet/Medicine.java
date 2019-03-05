@@ -1,7 +1,5 @@
 package com.medical.servlet;
 
-import java.util.Date;
-
 public class Medicine {
 
 	private int id;
