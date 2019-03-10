@@ -38,11 +38,6 @@
 						<td>${temp.manu}</td>
 						<td>${temp.expr}</td>
 						<td>${temp.price}</td>
-						<td>
-							<a href="${deleteLink}" 
-							onclick="if (!(confirm('Are you sure you want to delete this item?'))) return false">Delete
-							</a>
-						</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -62,7 +57,7 @@
 </style>
 
 	<div class="footer">
-		<p>Developed by Aakash, Deepika, Nirali, Prajwal and Supreeth<br>Jain University - 2019</p>
+		<p>Developed by Supreeth Basabattini<br>Jain University - 2019</p>
 	</div>
 </body>
 </html>

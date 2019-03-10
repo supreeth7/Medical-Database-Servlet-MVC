@@ -38,6 +38,8 @@ public class Controller extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		try {
 			String form = request.getParameter("add");
 			if (form == null) {
