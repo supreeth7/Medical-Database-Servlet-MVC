@@ -1,4 +1,4 @@
-# Medical-Database-Servelt-MVC
+# Medical-Database-Servlet-MVC
 A medical database web app developed for university mini-project in my sixth semester.
 
 ## Technologies used
